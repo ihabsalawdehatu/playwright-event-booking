@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Booking Confirmed - ATU Events</title><link rel="stylesheet" href="style.css"></head>
+<body><main class="container"><h1>Booking Confirmed</h1><p id="confirmationIntro">Your event booking has been completed successfully.</p>
+<section class="summary"><h2>Booking Details</h2><p id="confirmedName"></p><p id="confirmedEvent"></p><p id="confirmedQuantity"></p><p id="confirmedTicketType"></p><p id="confirmedTotal"></p></section>
+<a href="index.html">Make another booking</a></main>
+<script>
+const stored=sessionStorage.getItem("eventBooking");
+if(stored){const b=JSON.parse(stored);
+document.getElementById("confirmedName").textContent="Customer: "+b.name;
+document.getElementById("confirmedEvent").textContent="Event: "+b.event;
+document.getElementById("confirmedQuantity").textContent="Tickets: "+b.quantity;
+document.getElementById("confirmedTicketType").textContent="Ticket type: "+(b.student?"Student":"Standard");
+document.getElementById("confirmedTotal").textContent="Final price: €"+b.total;
+}else{document.getElementById("confirmationIntro").textContent="No booking details are available.";}
+</script></body></html>

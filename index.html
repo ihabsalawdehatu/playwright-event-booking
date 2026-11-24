@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ATU Events</title><link rel="stylesheet" href="style.css">
+</head>
+<body><main class="container">
+<h1>Event Ticket Booking</h1>
+<p class="intro">Book tickets for an upcoming event.</p>
+<form id="bookingForm" novalidate>
+<div class="form-group"><label for="customerName">Full Name</label><input id="customerName" type="text" placeholder="Enter your full name"><p id="nameError" class="error-message"></p></div>
+<div class="form-group"><label for="event">Event</label><select id="event"><option value="">Select an event</option><option value="software-conference">Software Conference</option><option value="web-development-day">Web Development Day</option><option value="cybersecurity-seminar">Cybersecurity Seminar</option></select><p id="eventError" class="error-message"></p></div>
+<div class="form-group"><label for="ticketQuantity">Ticket Quantity</label><input id="ticketQuantity" type="number" min="1" max="6" value="1"><p id="quantityError" class="error-message"></p></div>
+<fieldset><legend>Ticket Type</legend><div class="checkbox-row"><input id="studentTicket" type="checkbox"><label for="studentTicket">Student Ticket</label></div><p>Student Discount: 20% off the standard ticket price.</p></fieldset>
+<section class="summary"><h2>Booking Summary</h2><p>Standard price per ticket: <strong>€50.00</strong></p><p id="estimatedTotal">Estimated total: €50.00</p></section>
+<button type="submit">Book Tickets</button>
+</form>
+<div id="processingMessage" class="processing-message" role="status"></div>
+<div id="resultMessage" class="result-message" role="status"></div>
+</main><script src="script.js"></script></body></html>
